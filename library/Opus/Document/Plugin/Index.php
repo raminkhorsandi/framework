@@ -71,10 +71,8 @@ class Opus_Document_Plugin_Index extends Opus_Model_Plugin_Abstract
         // unmodified and clean...
         // TODO: Write unit test.
         $model = new Opus_Document($model->getId());
-        if ($model->getServerState() !== 'published') {
-            if ($model->getServerState() !== 'temporary') {
-                $this->removeDocumentFromIndexById($model->getId());
-            }
+
+        if ($model->getServerState() === 'temporary') {
             return;
         }
 
