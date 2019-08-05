@@ -272,7 +272,7 @@ class Opus_Search_Result_Base
 
             $returnedIds = $this->getReturnedMatchingIds();
             $existingIds = $finder
-                ->setServerState('published')
+                // ->setServerState('published')
                 ->setIdSubset($returnedIds)
                 ->ids();
 
